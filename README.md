@@ -4,15 +4,15 @@ A modern, fully responsive SaaS dashboard built with **Next.js**, **TypeScript**
 
 🔗 **Live Demo:**
 
-    <h2>📸 Project Screenshot</h2>
+<h2>📸 Project Screenshot</h2>
 
-    <img
-        src="public/screenshot.png"
-        alt="LearnHub Homepage"
-        width="100%"
-    />
+<img
+    src="public/screenshot.png"
+    alt="LearnHub Homepage"
+    width="100%"
+/>
 
-    Live : <https://next-dashboard-five-eta-76.vercel.app>
+Live : <https://next-dashboard-five-eta-76.vercel.app>
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
