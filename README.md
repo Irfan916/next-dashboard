@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 SaaS Analytics Dashboard
 
-## Getting Started
+A modern, fully responsive SaaS dashboard built with **Next.js**, **TypeScript**, **Recharts**, and **Tailwind CSS**. Features a collapsible sidebar, dynamic data visualization, and complex state management using advanced React patterns.
 
-First, run the development server:
+🔗 **Live Demo:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    <h2>📸 Project Screenshot</h2>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    <img
+        src="public/screenshot.png"
+        alt="LearnHub Homepage"
+        width="100%"
+    />
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    Live : <https://next-dashboard-five-eta-76.vercel.app>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
+![Recharts](https://img.shields.io/badge/Recharts-FF7300?logo=recharts&logoColor=white)
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Dashboard Overview:** A live revenue chart and a fully sortable, filterable data table of recent sales.
+- **Interactive Analytics:** Time-range selectors (`1M`, `3M`, `6M`, `1Y`) that dynamically update both the KPI stat cards and the traffic bar chart.
+- **User Settings:** A fully functional settings page with tabbed navigation (Profile, Notifications, Security) and custom toggle switches.
+- **Global Sidebar:** A collapsible sidebar using React Context and a custom `useSidebar` hook, preserving navigation state without reloading the page.
+- **Fully Typed:** Strict TypeScript interfaces for sales data, chart data, and reducer actions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Charts:** Recharts
+- **Icons:** Lucide-React
 
-## Deploy on Vercel
+## 🧠 Architecture Highlights (Advanced React)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**1. `useReducer` for Complex State**
+The Sales Table doesn't use multiple `useState` hooks. Instead, it uses a single `useReducer` to handle search queries, status filtering, and column sorting in one predictable state machine.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**2. `useMemo` for Performance**
+The Sales Table filters and sorts a list of data on every keystroke. `useMemo` ensures that this expensive calculation only re-runs when the table's state or the initial data actually changes.
+
+**3. Next.js App Router & Server Components**
+The main layout and static pages are rendered on the server for maximum speed. Interactive components (like the Sidebar and Charts) use the `"use client"` directive only where necessary, keeping the JavaScript bundle small.
+
+**4. Reusable Component Architecture**
+Stat cards, sidebar links, and settings toggles are all built as reusable components, passing props dynamically to keep the codebase DRY (Don't Repeat Yourself).

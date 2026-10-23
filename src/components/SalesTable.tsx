@@ -30,7 +30,7 @@ export default function SalesTable() {
                     onChange={(e) => dispatch({ type: "SET_STATUS", payload: e.target.value as "all" | "completed" | "pending" | "failed" })}
                     className="px-4 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-700"
                 >
-                    <option value="all">All Statuses</option>
+                    <option value="all">All Status</option>
                     <option value="completed">Completed</option>
                     <option value="pending">Pending</option>
                     <option value="failed">Failed</option>
@@ -65,8 +65,8 @@ export default function SalesTable() {
                                 <td className="p-4 font-bold text-slate-900">${sale.amount.toFixed(2)}</td>
                                 <td className="p-4">
                                     <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase ${sale.status === "completed" ? "bg-green-100 text-green-700" :
-                                            sale.status === "pending" ? "bg-yellow-100 text-yellow-700" :
-                                                "bg-red-100 text-red-700"
+                                        sale.status === "pending" ? "bg-yellow-100 text-yellow-700" :
+                                            "bg-red-100 text-red-700"
                                         }`}>
                                         {sale.status}
                                     </span>
